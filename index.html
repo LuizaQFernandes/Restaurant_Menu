@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,57 +10,57 @@
     <link href="./index.css" rel="stylesheet">
     <title>Menu</title>
 </head>
+
 <body>
 
-<div class="title">
-    <h1>Menu - Faça o seu pedido</h1>
-</div>  
+    <div class="title">
+        <h1>Menu - Faça o seu pedido</h1>
+    </div>
 
-<div class="container">
+    <div class="container">
 
-<div class= "content">
-    <form>
-        <div class="h2_title">
-            <h2 class="first_title ">Dados pessoais</h2>
+        <div class="content">
+            <form>
+                <div class="h2_title">
+                    <h2 class="first_title ">Dados pessoais</h2>
+                </div>
+                <label for="nome">Nome: </label> <br> <input type="text" id="nome" class="input_size"><br>
+                <label for="telefone"> Telefone: </label> <br> <input type="text" id="telefone" class="input_size"><br>
+                <label for="email"> Endereço: </label> <br> <input type="text" id="text" class="input_size"><br>
+
+                <div class="h2_title">
+                    <h2>Prato Principal</h2>
+                </div>
+                <input type="radio" id="pp1" name="option_pp" value="0" checked>
+                <label for="pp1">Carne de Panela </label>
+                <input type="radio" id="pp2" name="option_pp" value="1">
+                <label for="pp2">Bife Acebolado </label>
+                <input type="radio" id="pp3" name="option_pp" value="2">
+                <label for="pp3">Feijoada </label>
+
+                <div class="h2_title">
+                    <h2>Acompanhamentos</h2>
+                </div>
+                <input type="checkbox" id="a1" name="option_a" value="0">
+                <label for="a1">Arroz</label><br>
+                <input type="checkbox" id="a2" name="option_a" value="1">
+                <label for="a2">Salada</label><br>
+                <input type="checkbox" id="a3" name="option_a" value="2">
+                <label for="a3">Batata Frita</label><br>
+                <input type="checkbox" id="a4" name="option_a" value="3">
+                <label for="a3">Maionese</label><br>
+
+                <div class="h2_title">
+                    <h2 class="last_title">Finalizar Pedido</h2>
+                </div>
+
+                <div class="h2_title">
+                    <button> Enviar </button>
+                </div>
         </div>
-            <label for="nome">Nome:  </label> <br> <input type="text" id="nome" class="input_size"><br>
-            <label for="telefone"> Telefone:  </label> <br>  <input type="text" id="telefone" class="input_size"><br>
-            <label for="email"> Endereço:  </label> <br>  <input type="text" id="text" class="input_size"><br>
-
-        <div class="h2_title">
-            <h2>Prato Principal</h2>
-        </div>
-            <input type="radio" id="pp1" name="option_pp" value="0" checked> 
-            <label for="pp1">Carne de Panela </label>
-            <input type="radio" id="pp2" name="option_pp" value="1"> 
-            <label for="pp2">Bife Acebolado </label>
-            <input type="radio" id="pp3" name="option_pp" value="2"> 
-            <label for="pp3">Feijoada </label>
-        
-        <div class="h2_title">
-            <h2>Acompanhamentos</h2>
-        </div>
-            <input type="checkbox" id="a1" name="option_a" value="0"> 
-            <label for="a1">Arroz</label><br>
-            <input type="checkbox" id="a2" name="option_a" value="1"> 
-            <label for="a2">Salada</label><br>
-            <input type="checkbox" id="a3" name="option_a" value="2"> 
-            <label for="a3">Batata Frita</label><br>
-            <input type="checkbox" id="a4" name="option_a" value="3"> 
-            <label for="a3">Maionese</label><br>
-
-        <div class="h2_title">
-            <h2 class="last_title">Finalizar Pedido</h2> 
-        </div>   
-
-        <div class="h2_title">
-            <button>Enviar</button>   
-        </div>
-        
+    </div>
 
     </form>
-</div>
-</div>
+    </body>
 
-</body>
 </html>
