@@ -56,8 +56,9 @@
                 </div>
 
                 <div class="side">
-                    <button class="button" onclick="resumo()"> Enviar </button> <button class="button clean"> Limpar </button>
+                    <button class="button" onclick="resumo()"> Enviar </button> <button class="button clean" onClick="limpar()"> Limpar </button>
                 </div>
+
                 <script>
                     function resumo() {
 
@@ -70,6 +71,12 @@
                         `RESUMO DO PEDIDO\n\nCliente: ${nome} \nTelefone: ${telefone}\nEndereço: ${local}\nPrato principal: ${pratoPrincipal('option_pp')}\nAcompanhamentos: ${Acompanhamentos('option_a')}`;
 
                         alert(resumo);
+                    }
+
+                    function limpar(){
+                        document.getElementById("nome").value = "";
+                        telefone = document.getElementById("telefone").value = "";
+                        local = document.getElementById("endereco").value = "";
                     }
 
                     function pratoPrincipal(name) {
