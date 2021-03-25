@@ -58,7 +58,14 @@ body{
     margin-bottom: 5px;
 }
 
-button{
+.side{
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.button{
     color: white;
     background-color: #096138;
 
@@ -68,10 +75,25 @@ button{
     border-radius: 5%;
     font-size: 1rem;
 
+    margin-left: 5px;
+    margin-right: 5px;
+
     cursor: pointer;
 }
 
-button:hover{
+.button:hover{
     color: white;
-    background-color: #042c19
+    background-color: #04331d;
 }
+
+
+.clean{
+    color: white;
+    background-color: #c9001b; 
+}
+
+
+.clean:hover{
+    background-color: #5a010d;
+}
+
