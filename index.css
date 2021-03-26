@@ -5,6 +5,7 @@
 
 body{
     background-image: url(https://source.unsplash.com/collection/386111/1600x900);
+    font-size: 1rem;
     margin: 0; 
     border: 0;
 }
@@ -29,9 +30,9 @@ body{
     display: flex;
     justify-content: center;
 
-    background-color: #fbfffd;
+    background-color: #ffffff;
     border-radius: 2%;
-    box-shadow: 0 0 1em #174415;
+    box-shadow: 0 0 1em #3b3b3b;
 
     width: auto;
     height: auto;
