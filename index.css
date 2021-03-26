@@ -60,38 +60,34 @@ body{
 
 .side{
     display: flex;
-    justify-content: center;
-
-    
+    justify-content: center;    
 }
 
-.button{
+button{
     color: white;
-    background-color: #096138;
-
+    
     width: 100%;
     height: 35px;
 
     border-radius: 5%;
     font-size: 1rem;
 
-    margin-left: 5px;
-    margin-right: 5px;
-
     cursor: pointer;
 }
 
-.button:hover{
-    color: white;
-    background-color: #04331d;
+.send{
+    background-color: #096138;
+    margin-right: 3px;
 }
 
+.send:hover{
+   background-color: #04331d;
+}
 
 .clean{
-    color: white;
     background-color: #c9001b; 
+    margin-left: 3px;
 }
-
 
 .clean:hover{
     background-color: #5a010d;

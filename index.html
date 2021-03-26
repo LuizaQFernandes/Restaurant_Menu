@@ -16,7 +16,7 @@
 <body>
     <!-- Title -->
     <div class="title">
-        <h1>Menu - Faça o seu pedido <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M17.849 11.808l-.707-.707-9.9 9.9H3v-4.243L14.313 5.444l5.657 5.657a1 1 0 0 1 0 1.414l-7.07 7.071-1.415-1.414 6.364-6.364zm-2.121-2.121l-1.415-1.414L5 17.586v1.415h1.414l9.314-9.314zm2.828-7.071l2.829 2.828a1 1 0 0 1 0 1.414L19.97 8.273 15.728 4.03l1.414-1.414a1 1 0 0 1 1.414 0z" fill="rgba(255,255,255,1)"/></svg></div>
+        <h1>Menu - Faça o seu pedido</div>
 
     <!-- Content -->
     <div class="cont">
@@ -25,16 +25,16 @@
                 <div class="h2_title">
                     <h2 class="first_title ">Dados pessoais <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14 14.252v2.09A6 6 0 0 0 6 22l-2-.001a8 8 0 0 1 10-7.748zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 6v-3h2v3h3v2h-3v3h-2v-3h-3v-2h3z"/></svg></h2>
                 </div>
-                <label for="nome">Nome: </label> <br> <input type="text" id="nome" class="input_size"><br>
-                <label for="telefone">Telefone: </label> <br> <input type="text" id="telefone" class="input_size"><br>
-                <label for="endereco">Endereço: </label> <br> <input type="text" id="endereco" class="input_size"><br>
+                <label for="nome">*Nome: </label> <br> <input type="text" id="nome" class="input_size"><br>
+                <label for="telefone">*Telefone: </label> <br> <input type="text" id="telefone" class="input_size"><br>
+                <label for="endereco">*Endereço: </label> <br> <input type="text" id="endereco" class="input_size"><br>
 
                 <div class="h2_title">
                     <h2>Prato Principal <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 2v20h-2v-8h-3V7a5 5 0 0 1 5-5zM9 13.9V22H7v-8.1A5.002 5.002 0 0 1 3 9V3h2v7h2V3h2v7h2V3h2v6a5.002 5.002 0 0 1-4 4.9z"/></svg></h2>
                 </div>
                 <input type="radio" id="Carne de Panela" name="option_pp" value="0" checked>
                 <label for="pp1">Carne de Panela </label>
-                <input type="radio" id="Bife Abebolado" name="option_pp" value="1">
+                <input type="radio" id="Bife Acebolado" name="option_pp" value="1">
                 <label for="pp2">Bife Acebolado </label>
                 <input type="radio" id="Feijoada" name="option_pp" value="2">
                 <label for="pp3">Feijoada </label>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="side">
-                    <button class="button" onclick="resumo()"> Enviar </button> <button class="button clean" onClick="limpar()"> Limpar </button>
+                    <button class="send" onclick="resumo()"> Enviar </button> <button class="button clean" onClick="limpar()"> Limpar </button>
                 </div>
 
                 <script>
@@ -67,17 +67,32 @@
                         telefone = document.getElementById("telefone").value;
                         local = document.getElementById("endereco").value;
 
-                        var resumo =
-                        `\n\nRESUMO DO PEDIDO\n\nCliente: ${nome} \nTelefone: ${telefone}\nEndereço: ${local}\nPrato principal: ${pratoPrincipal('option_pp')}\nAcompanhamentos: ${Acompanhamentos('option_a')}`;
+                        if(nome == "" || telefone == "" || local == "")
+                        {
+                            alert('Preencha todos os campos!');
+                        }
+                        else{
 
-                        alert(resumo);
+                            var resumo =
+                            `\n\nRESUMO DO PEDIDO\n\nCliente: ${nome} \nTelefone: ${telefone}\nEndereço: ${local}\nPrato principal: ${pratoPrincipal('option_pp')}\nAcompanhamentos: ${Acompanhamentos('option_a')}`;
+
+                            alert(resumo);
+                        }
+                       
                     }
 
                     function limpar(){
                         document.getElementById("nome").value = "";
                         document.getElementById("telefone").value = "";
                         document.getElementById("endereco").value = "";
-                        
+
+                        var rads = document.getElementsByName('option_a');
+                        var escolhido = [];
+                        for (var i = 0; i < rads.length; i++) {
+                            if (rads[i].checked) {
+                                rads[i].checked = 0;
+                            }
+                        } 
                     }
 
                     function pratoPrincipal(name) {
@@ -104,7 +119,13 @@
                                 escolhido.push(`${rads[i].id}`);
                             }
                         }
-                        return escolhido;
+                        if(escolhido.length > 0) {
+                            return escolhido;
+                        }
+                        else{
+                            return 'Nenhum';
+                        }
+                        
                     }
 
                 </script>
